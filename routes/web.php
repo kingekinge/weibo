@@ -15,11 +15,14 @@
 //    return view('welcome');
 //});
 
-Route::get('/','StaticPagesController@home');
+/**
+ * 路由命名help
+ */
+Route::get('/','StaticPagesController@home')->name('home');
 
-Route::get('/about','StaticPagesController@about');
+Route::get('/about','StaticPagesController@about')->name('about');
 
-Route::get('/help','StaticPagesController@help');
+Route::get('/help','StaticPagesController@help')->name('help');
 
-
+Route::get('/signup','UserController@siginUp')->name('signup');
 
