@@ -10887,3 +10887,18 @@ body {
   font-weight: normal;
 }
 
+.footer {
+  padding-top: 20px;
+  border-top: solid 1px #eaeaea;
+  margin-top: 20px;
+}
+
+.footer img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer a:hover {
+  color: #222;
+}
+

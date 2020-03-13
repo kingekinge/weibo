@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
-    <title></title>
-</head>
-<body>
+<footer class="footer">
+    <img class="brand-icon" src="https://cdn.learnku.com/uploads/sites/KDiyAbV0hj1ytHpRTOlVpucbLebonxeX.png">
 
-</body>
-</html>
+
+    <a href="https://learnku.com/laravel/courses" target=_blank>
+        刻意练习，每日精进
+    </a>
+
+    <div class="float-right">
+        <a href="{{route('about')}}" >关于</a>
+    </div>
+</footer>
