@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$USER_HOME$/Desktop/IDEA/ficusSpark" value="1465360143000" />
+        <entry key="$USER_HOME$/IdeaProject/BridgeUserDetector" value="1477994839000" />
+        <entry key="$USER_HOME$/IdeaProject/Picasso" value="1512619154503" />
+        <entry key="$USER_HOME$/IdeaProject/ficusspark" value="1513318724881" />
+        <entry key="$USER_HOME$/IdeaProject/helloplay" value="1508310732000" />
+        <entry key="$USER_HOME$/IdeaProject/play" value="1468335327000" />
+        <entry key="$USER_HOME$/IdeaProject/play-ui" value="1469701782000" />
+        <entry key="$USER_HOME$/IdeaProject/spark-jobserver" value="1467900910000" />
+        <entry key="$USER_HOME$/IdeaProject/spark-jobserver-master" value="1466686616000" />
+        <entry key="$USER_HOME$/IdeaProject/spark-submit-ui" value="1489373473000" />
+        <entry key="$USER_HOME$/IdeaProject/statistics" value="1511950564968" />
+        <entry key="$USER_HOME$/akka-play" value="1506657896000" />
+        <entry key="$USER_HOME$/akka-sample-remote-scala" value="1506591656000" />
+        <entry key="$USER_HOME$/helloplay" value="1508310732000" />
+        <entry key="$USER_HOME$/json" value="1463034805000" />
+        <entry key="$USER_HOME$/play" value="1467130004000" />
+        <entry key="$USER_HOME$/play-learn" value="1464795482000" />
+        <entry key="$USER_HOME$/young-crawler" value="1532504252271" />
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+</project>
