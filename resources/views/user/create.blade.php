@@ -48,8 +48,13 @@
                         <label for="password_confirmation">确认密码</label>
                         <input type="password" class="form-control" name="password_confirmation"   value="{{old('password_confirmation')}}">
                     </div>
+
+
                     <button type="submit" class="btn btn-primary">注册</button>
                 </form>
+
+                    <hr>
+                    <p>已有账号？<a href="{{ route('login') }}">现在登录</a></p>
 
             </div>
         </div>
