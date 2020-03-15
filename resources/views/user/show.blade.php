@@ -21,10 +21,6 @@
 
                         @endif
                         @endforeach
-
-
-
-
                         @include('user._user_info', ['user' => $user])
                     </section>
                 </div>

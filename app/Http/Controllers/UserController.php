@@ -10,9 +10,6 @@ use Auth;
 class UserController extends Controller
 {
 
-    function edit(){
-
-    }
 
 
     function index(){
@@ -51,8 +48,43 @@ class UserController extends Controller
 
         return redirect()->route('users.show',[$user]);
 
+    }
+
+    function edit(User $user) {
+        return view('user.edit', compact('user'));
+    }
+
+
+    function update(User $user,Request $request){
+
+        $this->validate($request, [
+            'name' => 'required|unique:users|max:50',
+            'password' => 'nullable| confirmed|min:6'
+        ]);
+
+
+        $arr=array();
+
+        $arr['name']=$request->name;
+        if(!is_null($request->password)){
+            $arr['password']=bcrypt($request->password);
+        }
+
+
+        $update = $user->update($arr);
+
+        if($update){
+            session()->flash('success','更新资料成功');
+            return redirect()->route('users.show',$user);
+        }
+
+        session()->flash('danger','更新资料失败');
+
+
 
     }
+
+
 
 
 
