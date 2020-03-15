@@ -29,3 +29,12 @@ Route::get('/signup','UserController@siginUp')->name('signup');
 Route::resource('users','UserController');
 
 
+/**
+ * 会话管理
+ */
+Route::get('login', 'SessionsController@create')->name('login');
+Route::post('login', 'SessionsController@store')->name('login');
+Route::delete('logout', 'SessionsController@destroy')->name('logout');
+
+
+
