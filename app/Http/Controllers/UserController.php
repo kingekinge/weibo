@@ -10,6 +10,21 @@ use Auth;
 class UserController extends Controller
 {
 
+    /**
+     * UserController constructor. 除了指定的路由，其他的都要登录
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => ['show', 'create', 'store']
+        ]);
+
+
+        $this->middleware('guest', [
+            'only' => ['create']
+        ]);
+    }
+
 
 
     function index(){
@@ -57,6 +72,8 @@ class UserController extends Controller
 
     function update(User $user,Request $request){
 
+        $this->authorize('update',$user);
+
         $this->validate($request, [
             'name' => 'required|unique:users|max:50',
             'password' => 'nullable| confirmed|min:6'
@@ -69,7 +86,6 @@ class UserController extends Controller
         if(!is_null($request->password)){
             $arr['password']=bcrypt($request->password);
         }
-
 
         $update = $user->update($arr);
 

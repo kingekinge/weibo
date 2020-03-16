@@ -4,8 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-class SessionsController extends Controller
-{
+class SessionsController extends Controller {
+
+
+    /**
+     * 只有来宾用户能访问的路由，登录界面
+     * SessionsController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('guest', [
+            'only' => ['create']
+        ]);
+    }
+
+
     function create(){
         return view('session.create');
 
@@ -16,7 +29,6 @@ class SessionsController extends Controller
         $credentials = $this->validate($request,[
             'email' => 'required|email|max:255',
             'password' => 'required'
-
         ]);
 
 
@@ -29,7 +41,11 @@ class SessionsController extends Controller
 
         if(Auth::attempt($credentials,$request->has('remember'))){
             session()->flash('success', '欢迎回来！');
-            return redirect()->route('users.show', [Auth::user()]);
+            $fallback = route('users.show', Auth::user());
+
+            //return redirect()->route('users.show', [Auth::user()]);
+
+            return redirect()->intended($fallback);
 
         }else{
             session()->flash('danger', '很抱歉，您的邮箱和密码不匹配');
