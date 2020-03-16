@@ -28,7 +28,9 @@ class UserController extends Controller
 
 
     function index(){
-
+            //每个分页10条数据，参数加上？page=1
+            $users=User::paginate(1);
+            return view('user.index',compact('users'));
     }
 
 
