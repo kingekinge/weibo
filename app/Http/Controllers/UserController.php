@@ -11,7 +11,7 @@ class UserController extends Controller
 {
 
     /**
-     * UserController constructor. 除了指定的路由，其他的都要登录
+     * UserController constructor. 除了指定的路由方法，其他的都要登录
      */
     public function __construct()
     {
@@ -74,6 +74,9 @@ class UserController extends Controller
 
     function update(User $user,Request $request){
 
+        /**
+         * 检查授权只有当前用户才能更新
+         */
         $this->authorize('update',$user);
 
         $this->validate($request, [
@@ -99,7 +102,13 @@ class UserController extends Controller
         session()->flash('danger','更新资料失败');
 
 
+    }
 
+
+    function destroy(User $user) {
+        $user->delete();
+        session()->flash('success', '成功删除用户！');
+        return back();
     }
 
 
